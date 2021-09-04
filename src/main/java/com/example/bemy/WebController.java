@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 public class WebController {
-    private final static String FILE_URL = "file/Nhi.txt";
+    private final static String FILE_URL = "Nhi.txt";
 
     @GetMapping("/")
     public String index(){
@@ -24,7 +24,7 @@ public class WebController {
         List<String> list = new ArrayList<>();
         ClassLoader classLoader = getClass().getClassLoader();
         //File file = new File(FILE_URL);
-        File file = new File(classLoader.getResource("file/Nhi.txt").getFile());
+        File file = new File(classLoader.getResource("Nhi.txt").getFile());
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -37,7 +37,7 @@ public class WebController {
 //            System.out.println(s);
 //        }
         model.addAttribute("list", list);
-        model.addAttribute("file",FILE_URL);
+        //model.addAttribute("file",FILE_URL);
         return "magic";
     }
 
