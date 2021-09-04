@@ -33,9 +33,9 @@ public class WebController {
         while((line = reader.readLine()) != null){
             list.add(line);
         }
-        for (String s : list) {
-            System.out.println(s);
-        }
+//        for (String s : list) {
+//            System.out.println(s);
+//        }
         model.addAttribute("list", list);
         model.addAttribute("file",FILE_URL);
         return "magic";
@@ -56,10 +56,6 @@ public class WebController {
         }else if(!lover.equals("Đỗ Tuấn Kiệt")){
             check =3;
         }
-        System.out.println(check);
-        System.out.println(name);
-        System.out.println(date);
-        System.out.println(lover);
         if(check == 0){
             return "redirect:/magic";
         }else{
