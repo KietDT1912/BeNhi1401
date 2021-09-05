@@ -21,23 +21,6 @@ public class WebController {
 
     @GetMapping("/magic")
     public String magic(Model model) throws IOException {
-        List<String> list = new ArrayList<>();
-        ClassLoader classLoader = getClass().getClassLoader();
-        //File file = new File(FILE_URL);
-        File file = new File(classLoader.getResource("Nhi.txt").getFile());
-        InputStream inputStream = new FileInputStream(file);
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader reader = new BufferedReader(inputStreamReader);
-
-        String line = "";
-        while((line = reader.readLine()) != null){
-            list.add(line);
-        }
-//        for (String s : list) {
-//            System.out.println(s);
-//        }
-        model.addAttribute("list", list);
-        //model.addAttribute("file",FILE_URL);
         return "magic";
     }
 
